@@ -1,20 +1,20 @@
 # Robotic Arm Kinematics Optimization
 
-Overview
+# Overview
 Engineered an optimized kinematics and control framework for a 6DOF Rot3U robotic arm to achieve submillimeter precision in industrial automation tasks. The system integrates forward and inverse kinematic modeling, Jacobianbased optimization, and trajectory control to ensure high stability, precision, and repeatability under realworld operational constraints.
 
-Framework
+# Framework
 Hardware: 6DOF Rot3U Robotic Arm
 Software: Python, NumPy, ROS, MATLAB (validation)
 Algorithms: Denavit–Hartenberg (DH) Parameterization, Jacobian Inverse Method, Gradient Descent Optimization
 
-Scope
+# Scope
  Develop a mathematical model for forward and inverse kinematics.
  Implement Jacobianbased optimization for joint angle corrections.
  Calibrate system parameters for submillimeter accuracy.
  Simulate and validate using Python and ROS before physical deployment.
 
-Methodology
+# Methodology
 
  1. Kinematic Modeling
 
@@ -44,16 +44,16 @@ while error > ε:
  Implemented PID tuning for precise trajectory following.
  Validated through simulated pickandplace tasks under varying payloads.
 
-Results
+# Results
 | Metric              | Value    | Description                           |
 | Positional Accuracy | < 0.8 mm | Verified via motion capture           |
 | Orientation Error   | < 0.5°   | Endeffector rotational precision      |
 | Computation Time    | 12 ms    | Average inverse kinematics solve time |
 | Repeatability       | >99.4%   | Across 100 motion cycles              |
 
-Key Insight: Jacobianbased adaptive damping minimized oscillations near singularities and improved convergence speed by 27% compared to baseline inverse solvers.
+# Key Insight: Jacobianbased adaptive damping minimized oscillations near singularities and improved convergence speed by 27% compared to baseline inverse solvers.
 
-Architecture (Textual Diagram)
+# Architecture (Textual Diagram)
 ┌──────────────────────────────────────────────┐
 │           Desired EndEffector Pose          │
 └───────────────────┬──────────────────────────┘
@@ -74,19 +74,19 @@ Architecture (Textual Diagram)
            │  Robotic Arm Motion │
            └───────────────────┘
 
-Conclusion
+# Conclusion
 The developed 6DOF kinematics optimization framework achieved submillimeter precision and realtime responsiveness, enabling its deployment for industrial assembly and inspection tasks. The integration of Jacobianbased inverse solvers with damping optimization significantly enhanced motion stability and control reliability
 
-Future Work
+# Future Work
  Extend to 7DOF redundant manipulators with taskpriority control.
  Integrate reinforcement learning for adaptive trajectory planning.
  Apply visionbased pose correction for dynamic workspaces.
 
-References
+# References
 1. Siciliano, B., et al. Robotics: Modelling, Planning and Control. Springer, 2010.
 2. Craig, J. J. Introduction to Robotics: Mechanics and Control. Pearson, 2018.
 3. Chiaverini, S. (1997). SingularityRobust Inverse Kinematics Control. Journal of Intelligent & Robotic Systems.
 
-Closest Research Paper:
+# Closest Research Paper:
 > Chiaverini, S. “SingularityRobust Inverse Kinematics Control Using Damped Least Squares.” IEEE Transactions on Robotics, 1997.
 > This paper forms the foundation for Jacobianbased optimization methods ensuring stable kinematic inversion and precise robotic arm control.
