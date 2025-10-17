@@ -54,6 +54,7 @@ while error > ε:
 # Key Insight: Jacobianbased adaptive damping minimized oscillations near singularities and improved convergence speed by 27% compared to baseline inverse solvers.
 
 # Architecture (Textual Diagram)
+
 ┌──────────────────────────────────────────────┐
 │           Desired EndEffector Pose          │
 └───────────────────┬──────────────────────────┘
