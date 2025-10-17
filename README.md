@@ -51,7 +51,8 @@ while error > ε:
 | Computation Time    | 12 ms    | Average inverse kinematics solve time |
 | Repeatability       | >99.4%   | Across 100 motion cycles              |
 
-# Key Insight: Jacobianbased adaptive damping minimized oscillations near singularities and improved convergence speed by 27% compared to baseline inverse solvers.
+# Key Insight
+Jacobianbased adaptive damping minimized oscillations near singularities and improved convergence speed by 27% compared to baseline inverse solvers.
 
 # Architecture (Textual Diagram)
 
