@@ -44,6 +44,28 @@ while error > ε:
  Implemented PID tuning for precise trajectory following.
  Validated through simulated pickandplace tasks under varying payloads.
 
+# Architecture (Textual Diagram)
+
+     ┌──────────────────────────────────────────────┐
+     │           Desired EndEffector Pose          │
+     └───────────────────┬──────────────────────────┘
+                         │
+                ┌────────▼────────┐
+                │ Inverse Kinematics │
+                └────────┬────────┘
+                         │
+                ┌────────▼────────┐
+                │ Jacobian Optimization │
+                └────────┬────────┘
+                         │
+                ┌────────▼────────┐
+                │ Joint Control (PID) │
+                └────────┬────────┘
+                         │
+                ┌────────▼────────┐
+                │  Robotic Arm Motion │
+                └───────────────────┘
+
 # Results
 | Metric              | Value    | Description                           |
 | Positional Accuracy | < 0.8 mm | Verified via motion capture           |
@@ -53,28 +75,6 @@ while error > ε:
 
 # Key Insight
 Jacobianbased adaptive damping minimized oscillations near singularities and improved convergence speed by 27% compared to baseline inverse solvers.
-
-# Architecture (Textual Diagram)
-
-┌──────────────────────────────────────────────┐
-│           Desired EndEffector Pose          │
-└───────────────────┬──────────────────────────┘
-                    │
-           ┌────────▼────────┐
-           │ Inverse Kinematics │
-           └────────┬────────┘
-                    │
-           ┌────────▼────────┐
-           │ Jacobian Optimization │
-           └────────┬────────┘
-                    │
-           ┌────────▼────────┐
-           │ Joint Control (PID) │
-           └────────┬────────┘
-                    │
-           ┌────────▼────────┐
-           │  Robotic Arm Motion │
-           └───────────────────┘
 
 # Conclusion
 The developed 6DOF kinematics optimization framework achieved submillimeter precision and realtime responsiveness, enabling its deployment for industrial assembly and inspection tasks. The integration of Jacobianbased inverse solvers with damping optimization significantly enhanced motion stability and control reliability
